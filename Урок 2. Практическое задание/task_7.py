@@ -6,3 +6,16 @@
  Решите через рекурсию. Решение через цикл не принимается.
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+
+
+def sum_numbers(x):
+    if x == 1:
+        return 1
+    return x + sum_numbers(x - 1)
+
+
+user_number = int(input('Введите любое натуральное число:\n'))
+if sum_numbers(user_number) == user_number * (user_number + 1) / 2:
+    print('Равенство верно.')
+else:
+    print('Равенство не верно.')

@@ -18,3 +18,32 @@
 Решите через рекурсию. Решение через цикл не принимается.
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+
+
+def func(start, stop, out_str=''):
+    for i in range(start, stop):
+        if i <= last_ascii_chr:
+            out_str += f'{i} - {chr(i)} '
+    print(out_str)
+    if stop < last_ascii_chr:
+        return func(start + step, stop + step)
+
+
+first_ascii_chr = 32
+last_ascii_chr = 127
+step = 10
+
+# print('Реализация через цикл.')
+# while first_ascii_chr < last_ascii_chr:
+#     out_str = ''
+#     for i in range(first_ascii_chr, first_ascii_chr + step):
+#         if i > last_ascii_chr:
+#             break
+#         else:
+#             out_str += f'{i} - {chr(i)} '
+#     first_ascii_chr += step
+#     print(out_str)
+
+print('Реализация через рекурсию.')
+func(first_ascii_chr, first_ascii_chr + step)
+# recur_method(first_ascii_chr, first_ascii_chr + step)

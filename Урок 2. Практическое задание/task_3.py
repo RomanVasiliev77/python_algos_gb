@@ -15,3 +15,23 @@
 Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
 """
+
+
+def func(num, reverse_num=0):
+    if num == 0:
+        return reverse_number
+    else:
+        reverse_num = reverse_num * 10 + num % 10
+        num = num // 10
+        return func(num, reverse_num)
+
+
+number = int(input('Введите двухзначное или более натуральное число: '))
+reverse_number = 0
+while number != 0:
+    reverse_number = reverse_number * 10 + number % 10
+    number = number // 10
+
+print(f'Ввывод с помощью цикла: {reverse_number}')
+print('#' * 50)
+print(f'Вывод с помощью рекурсии: {func(number)}')

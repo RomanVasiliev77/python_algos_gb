@@ -9,3 +9,19 @@
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+from random import randint
+number = randint(0, 100)
+
+number_of_attempts = 0
+user_number = int(input('Угадайте загаданное число от 0 до 100, у вас 10 попыток: '))
+while number_of_attempts < 10:
+    if user_number == number:
+        print('Вы угадали!')
+        break
+    elif user_number < number:
+        user_number = int(input('Вы не угадали, загаданное число больше попробуйте ещё раз: '))
+        number_of_attempts += 1
+    else:
+        user_number = int(input('Вы не угадали, загаданное число меньше, попробуйте ещё раз: '))
+
+print(f'Было загадано число {number}')

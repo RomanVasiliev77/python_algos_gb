@@ -16,3 +16,22 @@
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
 """
+
+
+def counting_numeral(num):
+    even = 0
+    odd = 0
+    if not num:
+        return even, odd
+    even, odd = counting_numeral(num // 10)
+    if num % 2:
+        odd += 1
+    else:
+        even += 1
+    return even, odd
+
+
+number = int(input('Введите натуральное число: '))
+numerals = counting_numeral(number)
+print('Четных цифр в числе:', numerals[0])
+print('Нечетных:', numerals[1])
